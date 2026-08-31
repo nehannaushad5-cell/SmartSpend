@@ -26,11 +26,10 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response && error.response.status === 401) {
-      localStorage.removeItem('smartspend_token');
-      localStorage.removeItem('smartspend_user');
-      if (window.location.pathname !== '/login' && window.location.pathname !== '/register') {
-        window.location.href = '/login';
-      }
+      try {
+        localStorage.removeItem('smartspend_token');
+        localStorage.removeItem('smartspend_user');
+      } catch (e) {}
     }
     return Promise.reject(error);
   }
