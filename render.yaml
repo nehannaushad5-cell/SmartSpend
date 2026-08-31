@@ -3,11 +3,11 @@ services:
     name: smartspend
     env: python
     buildCommand: "cd frontend && npm install && npm run build && cd ../backend && pip install -r requirements.txt"
-    startCommand: "cd backend && gunicorn --bind 0.0.0.0:$PORT 'app:create_app()'"
+    startCommand: "cd backend && PYTHONPATH=..:. gunicorn --bind 0.0.0.0:$PORT 'app:create_app()'"
     envVars:
       - key: SECRET_KEY
         generateValue: true
       - key: JWT_SECRET_KEY
         generateValue: true
-      - key: PYTHON_VERSION
-        value: 3.10.12
+      - key: PYTHONPATH
+        value: "/opt/render/project/src:/opt/render/project/src/backend"
