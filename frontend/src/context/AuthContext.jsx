@@ -7,7 +7,8 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
     try {
       const saved = localStorage.getItem('smartspend_user');
-      return saved ? JSON.parse(saved) : null;
+      if (!saved || saved === 'undefined' || saved === 'null') return null;
+      return JSON.parse(saved);
     } catch (err) {
       return null;
     }
@@ -15,7 +16,11 @@ export const AuthProvider = ({ children }) => {
 
   const [token, setToken] = useState(() => {
     try {
-      return localStorage.getItem('smartspend_token') || null;
+      const saved = localStorage.getItem('smartspend_token');
+      if (!saved || saved === 'undefined' || saved === 'null' || saved.trim() === '') {
+        return null;
+      }
+      return saved;
     } catch (err) {
       return null;
     }
@@ -35,24 +40,40 @@ export const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    let isMounted = true;
     const verifyUser = async () => {
-      if (token) {
+      if (token && token !== 'undefined' && token !== 'null') {
         try {
           const res = await authAPI.getMe();
-          if (res.data && res.data.success) {
-            setUser(res.data.user);
-            localStorage.setItem('smartspend_user', JSON.stringify(res.data.user));
-          } else {
-            logout();
+          if (isMounted) {
+            if (res.data && res.data.success) {
+              setUser(res.data.user);
+              localStorage.setItem('smartspend_user', JSON.stringify(res.data.user));
+            } else {
+              logout();
+            }
           }
         } catch (err) {
-          console.error('Auth verification failed:', err);
-          logout();
+          if (isMounted) {
+            console.error('Auth verification failed:', err);
+            logout();
+          }
+        }
+      } else {
+        if (isMounted && user) {
+          setUser(null);
         }
       }
-      setLoading(false);
+      if (isMounted) {
+        setLoading(false);
+      }
     };
+
     verifyUser();
+
+    return () => {
+      isMounted = false;
+    };
   }, [token]);
 
   const login = async (email, password) => {
