@@ -1,0 +1,10 @@
+{
+  "model_name": "Logistic Regression Overspending Risk Classifier",
+  "train_samples": 640,
+  "test_samples": 160,
+  "accuracy": 0.9563,
+  "precision_macro": 0.6345,
+  "recall_macro": 0.6667,
+  "f1_score_macro": 0.6502,
+  "roc_auc_macro": 1.0
+}

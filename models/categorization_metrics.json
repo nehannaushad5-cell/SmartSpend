@@ -1,0 +1,9 @@
+{
+  "model_name": "TF-IDF + Logistic Regression Categorizer",
+  "train_samples": 135,
+  "test_samples": 34,
+  "accuracy": 0.8529,
+  "precision_macro": 0.838,
+  "recall_macro": 0.7847,
+  "f1_score_macro": 0.7948
+}

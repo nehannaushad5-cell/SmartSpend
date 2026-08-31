@@ -1,0 +1,11 @@
+Date,Description,Amount,Category,Payment Method
+2026-08-25,Amazon Electronics,1299.50,Shopping,Credit Card
+2026-08-26,Uber ride to airport,240.00,Transportation,UPI
+2026-08-27,Swiggy dinner,450.00,,UPI
+2026-08-28,Starbucks Coffee,320.00,Food & Dining,Debit Card
+2026-08-29,Blinkit Groceries,850.00,Groceries,UPI
+2026-08-30,Netflix Subscription,649.00,Subscriptions,Credit Card
+2026-08-30,Apollo Pharmacy,420.00,Healthcare,UPI
+2026-08-30,Swiggy dinner,450.00,,UPI
+08/29/2026,INVALID_ROW_NO_AMOUNT,,Food & Dining,UPI
+INVALID_DATE,Myntra Clothes,1499.00,Shopping,Credit Card

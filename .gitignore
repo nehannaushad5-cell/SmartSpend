@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# SQLite
+*.db
+*.sqlite3
+
+# Models & Data Cache
+models/*.joblib
+models/*.pkl
+models/*.h5
+models/*.keras
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Logs & Environment
+*.log
+.env
+.DS_Store
+.idea/
+.vscode/

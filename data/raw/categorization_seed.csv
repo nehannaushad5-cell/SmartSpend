@@ -1,0 +1,170 @@
+description,category
+swiggy dinner order,Food & Dining
+swiggy food delivery,Food & Dining
+zomato lunch order,Food & Dining
+zomato food delivery,Food & Dining
+restaurant dinner bill,Food & Dining
+restaurant lunch meal,Food & Dining
+starbucks coffee,Food & Dining
+starbucks cafe latte,Food & Dining
+mcdonalds burger meal,Food & Dining
+mcdonalds fast food,Food & Dining
+kfc fried chicken,Food & Dining
+dominos pizza delivery,Food & Dining
+cafe coffee tea,Food & Dining
+bakery pastries cake,Food & Dining
+subway salad sandwich,Food & Dining
+barbeque dinner buffet,Food & Dining
+burger king meal,Food & Dining
+swiggy biryani dinner,Food & Dining
+zomato dinner order,Food & Dining
+starbucks iced coffee,Food & Dining
+dining restaurant food,Food & Dining
+tiffin center breakfast,Food & Dining
+snack tea stall,Food & Dining
+haldiram sweets restaurant,Food & Dining
+chai point tea snacks,Food & Dining
+bigbasket weekly groceries,Groceries
+bigbasket grocery order,Groceries
+blinkit instant groceries,Groceries
+blinkit grocery delivery,Groceries
+zepto grocery order,Groceries
+zepto milk eggs,Groceries
+dmart monthly groceries,Groceries
+supermarket fruits vegetables,Groceries
+grocery store provisions,Groceries
+kirana store groceries,Groceries
+d-mart grocery bill,Groceries
+spencers supermarket groceries,Groceries
+fresh vegetables market,Groceries
+daily dairy milk curd,Groceries
+rice pulses provisions,Groceries
+cooking oil spices groceries,Groceries
+nature basket groceries,Groceries
+local grocery shop,Groceries
+supermart provisions,Groceries
+uber ride fare,Transportation
+uber cab ride,Transportation
+ola cab ride,Transportation
+ola auto fare,Transportation
+rapido bike ride,Transportation
+petrol fuel pump,Transportation
+diesel car fuel,Transportation
+auto rickshaw fare,Transportation
+metro train card recharge,Transportation
+bus ticket fare,Transportation
+irctc train ticket,Transportation
+fastag highway toll,Transportation
+parking ticket fee,Transportation
+flight ticket indigo,Transportation
+flight booking akasa,Transportation
+shell fuel petrol,Transportation
+cab ride airport,Transportation
+uber ride to office,Transportation
+ola ride to airport,Transportation
+electricity bill bescom,Bills & Utilities
+bescom electricity bill,Bills & Utilities
+water utility bill,Bills & Utilities
+piped gas bill,Bills & Utilities
+broadband wifi bill airtel,Bills & Utilities
+jio fiber wifi bill,Bills & Utilities
+mobile recharge jio,Bills & Utilities
+postpaid mobile bill vi,Bills & Utilities
+tata play dth bill,Bills & Utilities
+lpg gas cylinder refill,Bills & Utilities
+utility power bill,Bills & Utilities
+tata power bill,Bills & Utilities
+cesc electricity bill,Bills & Utilities
+electricity power bill,Bills & Utilities
+water bill payment,Bills & Utilities
+broadband bill payment,Bills & Utilities
+inox movie tickets,Entertainment
+pvr cinemas movie tickets,Entertainment
+bookmyshow movie tickets,Entertainment
+bookmyshow concert ticket,Entertainment
+gaming arcade entry,Entertainment
+bowling game ticket,Entertainment
+amusement park ticket,Entertainment
+comedy show tickets,Entertainment
+music festival ticket,Entertainment
+stadium match tickets,Entertainment
+theatre show ticket,Entertainment
+movie tickets pvr,Entertainment
+bookmyshow tickets,Entertainment
+apollo pharmacy medicines,Healthcare
+apollo pharmacy medical,Healthcare
+medplus pharmacy medicines,Healthcare
+doctor clinic consultation,Healthcare
+dentist consultation fee,Healthcare
+pathology lab test,Healthcare
+diagnostic scan test,Healthcare
+eye hospital spectacles,Healthcare
+physiotherapy clinic fee,Healthcare
+dermatologist consultation,Healthcare
+hospital bill payment,Healthcare
+pharmacy medical store,Healthcare
+medicines tablet bill,Healthcare
+medical checkup fee,Healthcare
+amazon online shopping,Shopping
+amazon shopping order,Shopping
+flipkart online shopping,Shopping
+flipkart clothes order,Shopping
+myntra fashion shopping,Shopping
+myntra clothes shopping,Shopping
+zara clothing shopping,Shopping
+hm tshirts jeans,Shopping
+shoppers stop clothes,Shopping
+electronics store shoes,Shopping
+nike running shoes,Shopping
+adidas footwear shoes,Shopping
+uniqlo jacket clothes,Shopping
+meesho fashion order,Shopping
+nykaa cosmetics shopping,Shopping
+online shopping clothes,Shopping
+udemy online course,Education
+coursera learning course,Education
+college semester tuition fee,Education
+school fee admission,Education
+stationery books pens,Education
+textbooks book depot,Education
+coaching tuition classes,Education
+ielts exam fee,Education
+university semester fee,Education
+education tuition fee,Education
+online course certification,Education
+make my trip hotel,Travel
+airbnb resort stay,Travel
+booking com hotel stay,Travel
+goibibo hotel booking,Travel
+vacation tour package,Travel
+resort room stay,Travel
+travel agency booking,Travel
+holiday trip booking,Travel
+hotel room stay,Travel
+monthly house rent,Rent
+flat maintenance rent,Rent
+apartment rent transfer,Rent
+landlord house rent,Rent
+society maintenance charges,Rent
+house rent payment,Rent
+flat rent payment,Rent
+netflix monthly subscription,Subscriptions
+spotify premium subscription,Subscriptions
+amazon prime subscription,Subscriptions
+youtube premium subscription,Subscriptions
+github copilot subscription,Subscriptions
+apple icloud storage plan,Subscriptions
+disney hotstar subscription,Subscriptions
+chatgpt plus subscription,Subscriptions
+monthly subscription plan,Subscriptions
+digital subscription renewal,Subscriptions
+cash withdrawal atm,Other
+money transfer friend,Other
+general miscellaneous expense,Other
+charity donation,Other
+courier post charges,Other
+pet vet clinic,Other
+laundry services,Other
+locksmith repair,Other
+tailor stitching charges,Other
+other miscellaneous expense,Other

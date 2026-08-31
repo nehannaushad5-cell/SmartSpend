@@ -1,0 +1,10 @@
+{
+  "model_name": "LSTM Deep Learning Time-Series Forecaster",
+  "architecture": "PyTorch LSTM Neural Network (32 hidden units)",
+  "sequence_window_size": 7,
+  "train_samples": 66,
+  "test_samples": 17,
+  "mae": 251.31,
+  "rmse": 347.7,
+  "mape": 33.94
+}
