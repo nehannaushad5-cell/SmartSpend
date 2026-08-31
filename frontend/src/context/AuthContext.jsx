@@ -5,20 +5,45 @@ const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
-    const saved = localStorage.getItem('smartspend_user');
-    return saved ? JSON.parse(saved) : null;
+    try {
+      const saved = localStorage.getItem('smartspend_user');
+      return saved ? JSON.parse(saved) : null;
+    } catch (err) {
+      return null;
+    }
   });
-  const [token, setToken] = useState(() => localStorage.getItem('smartspend_token'));
+
+  const [token, setToken] = useState(() => {
+    try {
+      return localStorage.getItem('smartspend_token') || null;
+    } catch (err) {
+      return null;
+    }
+  });
+
   const [loading, setLoading] = useState(true);
+
+  const logout = () => {
+    setToken(null);
+    setUser(null);
+    try {
+      localStorage.removeItem('smartspend_token');
+      localStorage.removeItem('smartspend_user');
+    } catch (err) {
+      console.error('Error clearing localStorage', err);
+    }
+  };
 
   useEffect(() => {
     const verifyUser = async () => {
       if (token) {
         try {
           const res = await authAPI.getMe();
-          if (res.data.success) {
+          if (res.data && res.data.success) {
             setUser(res.data.user);
             localStorage.setItem('smartspend_user', JSON.stringify(res.data.user));
+          } else {
+            logout();
           }
         } catch (err) {
           console.error('Auth verification failed:', err);
@@ -32,7 +57,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     const res = await authAPI.login({ email, password });
-    if (res.data.success) {
+    if (res.data && res.data.success) {
       setToken(res.data.token);
       setUser(res.data.user);
       localStorage.setItem('smartspend_token', res.data.token);
@@ -43,20 +68,13 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (name, email, password, currency) => {
     const res = await authAPI.register({ name, email, password, currency });
-    if (res.data.success) {
+    if (res.data && res.data.success) {
       setToken(res.data.token);
       setUser(res.data.user);
       localStorage.setItem('smartspend_token', res.data.token);
       localStorage.setItem('smartspend_user', JSON.stringify(res.data.user));
     }
     return res.data;
-  };
-
-  const logout = () => {
-    setToken(null);
-    setUser(null);
-    localStorage.removeItem('smartspend_token');
-    localStorage.removeItem('smartspend_user');
   };
 
   return (
