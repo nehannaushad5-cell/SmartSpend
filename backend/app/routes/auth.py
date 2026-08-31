@@ -71,3 +71,23 @@ def get_current_user(current_user):
         'success': True,
         'user': current_user.to_dict()
     }), 200
+
+@auth_bp.route('/reset-database', methods=['POST', 'GET'])
+def reset_database():
+    try:
+        from app.models.expense import Expense
+        from app.models.schema import Budget, SavingsGoal, RecurringExpense, Anomaly, ModelMetadata
+
+        db.session.query(Anomaly).delete()
+        db.session.query(RecurringExpense).delete()
+        db.session.query(SavingsGoal).delete()
+        db.session.query(Budget).delete()
+        db.session.query(Expense).delete()
+        db.session.query(ModelMetadata).delete()
+        db.session.query(User).delete()
+        db.session.commit()
+
+        return jsonify({'success': True, 'message': 'All registered users and transaction data wiped clean.'}), 200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'success': False, 'message': f'Failed to reset database: {str(e)}'}), 500
