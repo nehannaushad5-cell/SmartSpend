@@ -1,16 +1,26 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
+import { useMobileMenu } from '../context/MobileMenuContext';
 import { LogOut, User as UserIcon, Wallet, Menu } from 'lucide-react';
 
 const Navbar = ({ title, onToggleMobileMenu }) => {
   const { user, logout } = useAuth();
+  const { toggleMobileMenu } = useMobileMenu();
+
+  const handleToggle = () => {
+    if (onToggleMobileMenu) {
+      onToggleMobileMenu();
+    } else {
+      toggleMobileMenu();
+    }
+  };
 
   return (
     <header className="navbar-container">
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         {/* Hamburger Menu Toggle Button for Mobile */}
         <button 
-          onClick={onToggleMobileMenu}
+          onClick={handleToggle}
           className="mobile-menu-toggle"
           title="Open menu"
         >

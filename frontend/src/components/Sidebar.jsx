@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useMobileMenu } from '../context/MobileMenuContext';
 import { 
   LayoutDashboard, 
   Receipt, 
@@ -17,6 +18,11 @@ import {
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen, onClose }) => {
+  const { isOpen: contextIsOpen, closeMobileMenu } = useMobileMenu();
+
+  const activeIsOpen = isOpen !== undefined ? isOpen : contextIsOpen;
+  const activeClose = onClose || closeMobileMenu;
+
   const navItems = [
     { label: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
     { label: 'Expenses', path: '/expenses', icon: Receipt },
@@ -34,9 +40,9 @@ const Sidebar = ({ isOpen, onClose }) => {
   return (
     <>
       {/* Mobile Backdrop Overlay */}
-      {isOpen && (
+      {activeIsOpen && (
         <div 
-          onClick={onClose}
+          onClick={activeClose}
           className="mobile-backdrop"
           style={{
             position: 'fixed',
@@ -48,7 +54,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         />
       )}
 
-      <aside className={`sidebar-drawer ${isOpen ? 'mobile-open' : ''}`}>
+      <aside className={`sidebar-drawer ${activeIsOpen ? 'mobile-open' : ''}`}>
         {/* Brand Header */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 8px 24px 8px', borderBottom: '1px solid var(--border-glass)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -77,7 +83,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
           {/* Close button on mobile */}
           <button 
-            onClick={onClose} 
+            onClick={activeClose} 
             className="mobile-close-btn"
             style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', padding: '4px' }}
           >
@@ -93,7 +99,7 @@ const Sidebar = ({ isOpen, onClose }) => {
               <NavLink
                 key={item.path}
                 to={item.path}
-                onClick={onClose}
+                onClick={activeClose}
                 style={({ isActive }) => ({
                   display: 'flex',
                   alignItems: 'center',

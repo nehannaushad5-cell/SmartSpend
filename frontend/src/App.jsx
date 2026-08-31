@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import { MobileMenuProvider } from './context/MobileMenuContext';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Dashboard';
 import Expenses from './pages/Expenses';
@@ -44,7 +45,6 @@ const GlobalLoading = () => (
 
 const ProtectedLayout = ({ children }) => {
   const { user, loading } = useAuth();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   if (loading) {
     return <GlobalLoading />;
@@ -55,12 +55,14 @@ const ProtectedLayout = ({ children }) => {
   }
 
   return (
-    <div className="app-container">
-      <Sidebar isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
-      <div className="main-content">
-        {children}
+    <MobileMenuProvider>
+      <div className="app-container">
+        <Sidebar />
+        <div className="main-content">
+          {children}
+        </div>
       </div>
-    </div>
+    </MobileMenuProvider>
   );
 };
 
