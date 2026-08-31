@@ -45,14 +45,9 @@ const ProtectedLayout = ({ children }) => {
 
   return (
     <div className="app-container">
-      <Sidebar isOpen={mobileMenuOpen} onClose={closeMobileMenu} />
+      <Sidebar isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
       <div className="main-content">
-        {React.Children.map(children, child => {
-          if (React.isValidElement(child)) {
-            return React.cloneElement(child, { onToggleMobileMenu: toggleMobileMenu });
-          }
-          return child;
-        })}
+        {children}
       </div>
     </div>
   );
